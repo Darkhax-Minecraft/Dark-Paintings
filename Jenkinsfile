@@ -10,25 +10,25 @@ pipeline {
         
             steps {
             
-			    withCredentials([file(credentialsId: 'mod_build_secrets', variable: 'ORG_GRADLE_PROJECT_secretFile')]) {
-				
+                withCredentials([file(credentialsId: 'mod_build_secrets', variable: 'ORG_GRADLE_PROJECT_secretFile')]) {
+                
                     echo 'Cleaning project workspace.'
                     sh 'chmod +x gradlew'
-				    sh './gradlew clean'
-				}
+                    sh './gradlew clean'
+                }
             }
         }
         
         stage('Build') {
         
-		    steps {
-			
-			    withCredentials([file(credentialsId: 'mod_build_secrets', variable: 'ORG_GRADLE_PROJECT_secretFile')]) {
-			
-			        echo 'Building project.'
-                    sh './gradlew build publish curseforge --stacktrace --info'
-			    }
-			}
+            steps {
+            
+                withCredentials([file(credentialsId: 'mod_build_secrets', variable: 'ORG_GRADLE_PROJECT_secretFile')]) {
+            
+                    echo 'Building project.'
+                    sh './gradlew build recompress publish curseforge updateVersionTracker --stacktrace --info'
+                }
+            }
         }
     }
 }
