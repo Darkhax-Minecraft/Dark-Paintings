@@ -36,17 +36,17 @@ sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = co
 minecraft {
 
     mappings channel: 'snapshot', version: "${mcp_version}".toString()
-	
+    
     if (project.hasProperty('mod_at')) {
     
         accessTransformer = file(findProperty('mod_at'))
     }
-	
+    
     runs {
         client {
-		
+        
             workingDirectory project.file('run')
-			taskName "${mod_name} Client"
+            taskName "${mod_name} Client"
 
             mods {
                 darkpaintings {
@@ -57,8 +57,8 @@ minecraft {
 
         server {
             workingDirectory project.file('run')
-			taskName "${mod_name} Server"
-			
+            taskName "${mod_name} Server"
+            
             mods {
                 darkpaintings {
                     source sourceSets.main
@@ -190,22 +190,22 @@ task signJar(type: SignJar, dependsOn: jar) {
         project.hasProperty('keyStore')
     }
     
-	if (project.hasProperty('keyStore')) {
-	
-	    project.logger.lifecycle('Signing jar ' + jar.archivePath.getName());
-	
+    if (project.hasProperty('keyStore')) {
+    
+        project.logger.lifecycle('Signing jar ' + jar.archivePath.getName());
+    
         keyStore = project.findProperty('keyStore')
         alias = project.findProperty('keyStoreAlias')
         storePass = project.findProperty('keyStorePass')
         keyPass = project.findProperty('keyStoreKeyPass')
         inputFile = jar.archivePath
         outputFile = jar.archivePath
-	}
-	
-	else {
-	
-	    project.logger.lifecycle('Could not sign ' + jar.archivePath.getName() + '. No keyStore property could be found')
-	}
+    }
+    
+    else {
+    
+        project.logger.lifecycle('Could not sign ' + jar.archivePath.getName() + '. No keyStore property could be found')
+    }
 }
 
 build.dependsOn signJar
