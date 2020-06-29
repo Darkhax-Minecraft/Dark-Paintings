@@ -21,7 +21,12 @@ public class DarkPaintings {
     	registry.registerPainting("village", 64, 32);
     	registry.registerPainting("oceanic_view", 32, 16);
     	registry.registerPainting("watching_the_sunset", 32, 16);
-    	registry.registerPainting("enderman", 32, 16);
+    	registry.registerPainting("enderman", 32, 16);    	
+    	registry.registerPainting("lumberjack", 64, 32);
+    	registry.registerPainting("summer_heat", 32, 16);
+    	registry.registerPainting("the_tower", 16, 32);
+    	registry.registerPainting("bubbles", 16, 16);
+    	registry.registerPainting("afternoon_volcano", 16, 32);
     	
         this.registry.initialize(FMLJavaModLoadingContext.get().getModEventBus());
     }
