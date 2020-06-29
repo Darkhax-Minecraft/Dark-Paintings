@@ -1,28 +1,41 @@
 package net.darkhax.darkpaintings;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import net.darkhax.bookshelf.registry.RegistryHelper;
+import net.minecraft.entity.item.PaintingType;
+import net.minecraftforge.event.RegistryEvent.Register;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.IForgeRegistry;
 
 @Mod("darkpaintings")
 public class DarkPaintings {
     
-    public static final Logger LOGGER = LogManager.getLogger("Dark Paintings");
-    private final RegistryHelper registry = new RegistryHelper("darkpaintings", LOGGER, null);
-    
     public DarkPaintings() {
         
-    	registry.registerPainting("in_the_air", 32, 16);
-    	registry.registerPainting("skyblock", 16, 16);
-    	registry.registerPainting("planets", 32, 16);
-    	registry.registerPainting("village", 64, 32);
-    	registry.registerPainting("oceanic_view", 32, 16);
-    	registry.registerPainting("watching_the_sunset", 32, 16);
-    	registry.registerPainting("enderman", 32, 16);
-    	
-        this.registry.initialize(FMLJavaModLoadingContext.get().getModEventBus());
+        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(PaintingType.class, this::registerPaintings);
+    }
+    
+    private void registerPaintings (Register<PaintingType> event) {
+        
+        final IForgeRegistry<PaintingType> registry = event.getRegistry();
+        
+        registry.register(this.createPainting("in_the_air", 32, 16));
+        registry.register(this.createPainting("skyblock", 16, 16));
+        registry.register(this.createPainting("planets", 32, 16));
+        registry.register(this.createPainting("village", 64, 32));
+        registry.register(this.createPainting("oceanic_view", 32, 16));
+        registry.register(this.createPainting("watching_the_sunset", 32, 16));
+        registry.register(this.createPainting("enderman", 32, 16));
+        registry.register(this.createPainting("lumberjack", 64, 32));
+        registry.register(this.createPainting("summer_heat", 32, 16));
+        registry.register(this.createPainting("the_tower", 16, 32));
+        registry.register(this.createPainting("bubbles", 16, 16));
+        registry.register(this.createPainting("afternoon_volcano", 16, 32));
+    }
+    
+    private PaintingType createPainting (String id, int width, int height) {
+        
+        final PaintingType type = new PaintingType(width, height);
+        type.setRegistryName("darkpaintings", id);
+        return type;
     }
 }
