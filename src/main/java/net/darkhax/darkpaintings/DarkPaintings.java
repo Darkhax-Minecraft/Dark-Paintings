@@ -10,7 +10,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 public class DarkPaintings {
     
     public DarkPaintings() {
-        
+
         FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(PaintingType.class, this::registerPaintings);
     }
     
