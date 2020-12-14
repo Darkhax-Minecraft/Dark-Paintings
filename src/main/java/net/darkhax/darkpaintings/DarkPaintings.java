@@ -1,42 +1,34 @@
 package net.darkhax.darkpaintings;
 
-import net.minecraft.entity.item.PaintingType;
-import net.minecraftforge.event.RegistryEvent.Register;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.IForgeRegistry;
+import net.fabricmc.api.ModInitializer;
+import net.minecraft.entity.decoration.painting.PaintingMotive;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
-@Mod("darkpaintings")
-public class DarkPaintings {
-    
-    public DarkPaintings() {
+public class DarkPaintings implements ModInitializer {
+	
+	@Override
+	public void onInitialize() {
 
-        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(PaintingType.class, this::registerPaintings);
-    }
+        this.createPainting("in_the_air", 32, 16);
+        this.createPainting("skyblock", 16, 16);
+        this.createPainting("planets", 32, 16);
+        this.createPainting("village", 64, 32);
+        this.createPainting("oceanic_view", 32, 16);
+        this.createPainting("watching_the_sunset", 32, 16);
+        this.createPainting("enderman", 32, 16);
+        this.createPainting("lumberjack", 64, 32);
+        this.createPainting("summer_heat", 32, 16);
+        this.createPainting("the_tower", 16, 32);
+        this.createPainting("bubbles", 16, 16);
+        this.createPainting("afternoon_volcano", 16, 32);
+        this.createPainting("the_wheel", 32, 32);
+	}
     
-    private void registerPaintings (Register<PaintingType> event) {
+    private PaintingMotive createPainting (String id, int width, int height) {
         
-        final IForgeRegistry<PaintingType> registry = event.getRegistry();
-        
-        registry.register(this.createPainting("in_the_air", 32, 16));
-        registry.register(this.createPainting("skyblock", 16, 16));
-        registry.register(this.createPainting("planets", 32, 16));
-        registry.register(this.createPainting("village", 64, 32));
-        registry.register(this.createPainting("oceanic_view", 32, 16));
-        registry.register(this.createPainting("watching_the_sunset", 32, 16));
-        registry.register(this.createPainting("enderman", 32, 16));
-        registry.register(this.createPainting("lumberjack", 64, 32));
-        registry.register(this.createPainting("summer_heat", 32, 16));
-        registry.register(this.createPainting("the_tower", 16, 32));
-        registry.register(this.createPainting("bubbles", 16, 16));
-        registry.register(this.createPainting("afternoon_volcano", 16, 32));
-        registry.register(this.createPainting("the_wheel", 32, 32));
-    }
-    
-    private PaintingType createPainting (String id, int width, int height) {
-        
-        final PaintingType type = new PaintingType(width, height);
-        type.setRegistryName("darkpaintings", id);
+        final PaintingMotive type = new PaintingMotive(width, height);
+        Registry.register(Registry.PAINTING_MOTIVE, new Identifier("darkpaintings", id), type);
         return type;
     }
 }

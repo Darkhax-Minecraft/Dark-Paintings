@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "darkpaintings",
+  "version": "${version}",
+  "name": "Dark Paintings",
+  "description": "New paintings created by members of our community.",
+  "authors": [
+    "Darkhax",
+	"mmg28rtt",
+	"FuryDev",
+	"Kiqonic",
+	"Wouter",
+	"VydaX"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/dark-paintings",
+    "sources": "https://github.com/Darkhax-Minecraft/Dark-Paintings"
+  },
+  "license": "LGPL v2.1",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.darkhax.darkpaintings.DarkPaintings"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}
