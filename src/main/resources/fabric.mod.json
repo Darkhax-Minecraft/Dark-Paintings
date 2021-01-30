@@ -17,6 +17,7 @@
     "sources": "https://github.com/Darkhax-Minecraft/Dark-Paintings"
   },
   "license": "LGPL v2.1",
+  "icon": "assets/darkpaintings/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
