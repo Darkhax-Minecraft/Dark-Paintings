@@ -7,7 +7,6 @@ plugins {
 apply from: 'https://raw.githubusercontent.com/MinecraftModDevelopment/Gradle-Collection/master/generic/secrets.gradle'
 apply from: 'https://raw.githubusercontent.com/MinecraftModDevelopment/Gradle-Collection/master/generic/markdown-git-changelog.gradle'
 apply from: 'https://raw.githubusercontent.com/MinecraftModDevelopment/Gradle-Collection/master/minecraft/artifacts.gradle'
-apply from: 'https://raw.githubusercontent.com/MinecraftModDevelopment/Gradle-Collection/master/minecraft/maven_local_nomcp.gradle'
 apply from: 'https://raw.githubusercontent.com/MinecraftModDevelopment/Gradle-Collection/master/generic/patreon.gradle'
 
 import groovy.json.JsonSlurper
@@ -70,7 +69,8 @@ curseforge {
         releaseType = 'beta'
         changelog = getGitChangelog() + "\n\nLike the mod? Consider following me on [Twitter](https://twitter.com/darkhaxdev) and joining the [Discord](https://discord.darkhax.net)\n\nHuge thanks to my supporters on [Patreon](https://www.patreon.com/Darkhax?MCChangelog?${mod_name})\n\n" + getPledgeLog()
         changelogType = 'markdown'
-
+        addGameVersion "Fabric"
+        
         versions.each {
 
             addGameVersion "${it}"
@@ -105,6 +105,10 @@ curseforge {
         addArtifact(javadocJar)
         addArtifact(deobfJar)
     }
+    
+    options {
+        forgeGradleIntegration = false;
+    }
 }
 
 tasks.getByName("curseforge").doLast {
@@ -131,5 +135,22 @@ tasks.getByName("curseforge").doLast {
     
     catch (IOException e) {
         println 'Failed to push to the Discord webhook.'
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId project.group
+            artifactId project.archivesBaseName
+            version project.version
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            // Sets the maven URL
+            url findProperty('localMaven')
+        }
     }
 }
