@@ -23,6 +23,7 @@ public class DarkPaintings implements ModInitializer {
         this.createPainting("bubbles", 16, 16);
         this.createPainting("afternoon_volcano", 16, 32);
         this.createPainting("the_wheel", 32, 32);
+        this.createPainting("mr_moon", 16, 16);
 	}
     
     private PaintingMotive createPainting (String id, int width, int height) {
