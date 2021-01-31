@@ -85,30 +85,9 @@ curseforge {
             addGameVersion "${it}"
         }
 
-        mainArtifact(remapJar) {
-
-            relations {
-
-                if (project.hasProperty('curse_requirements')) {
-                    def requirements = "${curse_requirements}".split(', ')
-                    requirements.each {
-
-                        requiredLibrary "${it}"
-                    }
-                }
-
-                if (project.hasProperty('curse_optionals')) {
-                    def optionals = "${curse_optionals}".split(', ')
-                    optionals.each {
-
-                        optionalLibrary "${it}"
-                    }
-                }
-            }
-        }
-            
+        mainArtifact(file("${project.buildDir}/libs/${archivesBaseName}-${version}.jar"))
+          
         afterEvaluate {
-            mainArtifact(remapJar)
             uploadTask.dependsOn(remapJar)
         }
     }
