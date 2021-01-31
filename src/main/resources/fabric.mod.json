@@ -17,6 +17,7 @@
     "sources": "https://github.com/Darkhax-Minecraft/Dark-Paintings"
   },
   "license": "LGPL v2.1",
+  "icon": "assets/darkpaintings/textures/painting/mr_moon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
