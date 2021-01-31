@@ -32,7 +32,7 @@ sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
 archivesBaseName = "${project.mod_name}-fabric-${project.minecraft_version}"
-version = project.mod_version + "${getBuildNumber()}"
+version = project.mod_version + ".${getBuildNumber()}"
 
 repositories() {
 	maven {
@@ -71,6 +71,7 @@ curseforge {
 
     apiKey = findProperty('curse_auth') ?: 0 
     def versions = "${curse_versions}".split(', ')
+    
     project {
 
         id = "${curse_project}"
@@ -84,34 +85,31 @@ curseforge {
             addGameVersion "${it}"
         }
 
-        if (project.hasProperty('curse_requirements') || project.hasProperty('curse_optionals')) {
+        mainArtifact(remapJar) {
 
-            mainArtifact(remapJar) {
+            relations {
 
-                relations {
+                if (project.hasProperty('curse_requirements')) {
+                    def requirements = "${curse_requirements}".split(', ')
+                    requirements.each {
 
-                    if (project.hasProperty('curse_requirements')) {
-                        def requirements = "${curse_requirements}".split(', ')
-                        requirements.each {
-
-                            requiredLibrary "${it}"
-                        }
+                        requiredLibrary "${it}"
                     }
+                }
 
-                    if (project.hasProperty('curse_optionals')) {
-                        def optionals = "${curse_optionals}".split(', ')
-                        optionals.each {
+                if (project.hasProperty('curse_optionals')) {
+                    def optionals = "${curse_optionals}".split(', ')
+                    optionals.each {
 
-                            optionalLibrary "${it}"
-                        }
+                        optionalLibrary "${it}"
                     }
                 }
             }
+        }
             
-            afterEvaluate {
-                mainArtifact(remapJar)
-                uploadTask.dependsOn(remapJar)
-            }
+        afterEvaluate {
+            mainArtifact(remapJar)
+            uploadTask.dependsOn(remapJar)
         }
     }
     
