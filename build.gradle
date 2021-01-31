@@ -149,13 +149,15 @@ tasks.getByName("curseforge").doLast {
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
-            groupId project.group
-            artifactId project.archivesBaseName
-            version project.version
-            from components.java
-        }
-    }
+		mavenJava(MavenPublication) {
+			artifact(remapJar) {
+				builtBy remapJar
+			}
+			artifact(sourcesJar) {
+				builtBy remapSourcesJar
+			}
+		}
+	}
     repositories {
         maven {
             // Sets the maven URL
