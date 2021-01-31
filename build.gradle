@@ -15,7 +15,6 @@ plugins {
 
 apply from: 'https://raw.githubusercontent.com/MinecraftModDevelopment/Gradle-Collection/master/generic/secrets.gradle'
 apply from: 'https://raw.githubusercontent.com/MinecraftModDevelopment/Gradle-Collection/master/generic/markdown-git-changelog.gradle'
-apply from: 'https://raw.githubusercontent.com/MinecraftModDevelopment/Gradle-Collection/master/minecraft/artifacts.gradle'
 apply from: 'https://raw.githubusercontent.com/MinecraftModDevelopment/Gradle-Collection/master/generic/patreon.gradle'
 
 import groovy.json.JsonSlurper
@@ -87,7 +86,7 @@ curseforge {
 
         if (project.hasProperty('curse_requirements') || project.hasProperty('curse_optionals')) {
 
-            mainArtifact(jar) {
+            mainArtifact(remapJar) {
 
                 relations {
 
@@ -108,11 +107,12 @@ curseforge {
                     }
                 }
             }
+            
+            afterEvaluate {
+                mainArtifact(remapJar)
+                uploadTask.dependsOn(remapJar)
+            }
         }
-
-        addArtifact(sourcesJar)
-        addArtifact(javadocJar)
-        addArtifact(deobfJar)
     }
     
     options {
@@ -131,7 +131,7 @@ tasks.getByName("curseforge").doLast {
         
         def message = new Message();        
         message.setUsername(findProperty('mod_name'));
-        message.setContent("${project.findProperty('mod_name')} ${version} for Minecraft ${findProperty('minecraft_version')} has been released! The download will be public soon.");
+        message.setContent("${project.findProperty('mod_name')} ${version} (Fabric) for Minecraft ${findProperty('minecraft_version')} has been released! The download will be public soon.");
         
         def embed = new Embed();
         embed.addField('Download', "${project.findProperty('curse_page')}/files/$newFileId", false);
