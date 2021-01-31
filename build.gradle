@@ -8,12 +8,19 @@ targetCompatibility = JavaVersion.VERSION_1_8
 archivesBaseName = "${project.mod_name}-fabric-${project.minecraft_version}"
 version = project.mod_version
 
+repositories() {
+	maven {
+		url = "https://maven.fabricmc.net/io/github/prospector/modmenu/"
+	}
+}
+
 dependencies {
 
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	modImplementation "io.github.prospector:modmenu:${modmenu_version}"
 }
 
 processResources {
