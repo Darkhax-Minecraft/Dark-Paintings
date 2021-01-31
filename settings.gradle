@@ -8,3 +8,14 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
+buildscript {
+    repositories {
+        maven { url 'https://plugins.gradle.org/m2/' }
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'com.diluv.schoomp', name: 'Schoomp', version: '1.1.0'
+    }
+}
