@@ -86,7 +86,27 @@ curseforge {
         }
 
         mainArtifact(file("${project.buildDir}/libs/${archivesBaseName}-${version}.jar"))
-          
+        mainArtifact(remapJar) {
+
+            relations {
+
+                if (project.hasProperty('curse_requirements')) {
+                    def requirements = "${curse_requirements}".split(', ')
+                    requirements.each {
+
+                        requiredLibrary "${it}"
+                    }
+                }
+
+                if (project.hasProperty('curse_optionals')) {
+                    def optionals = "${curse_optionals}".split(', ')
+                    optionals.each {
+
+                        optionalLibrary "${it}"
+                    }
+                }
+            }
+        }            
         afterEvaluate {
             uploadTask.dependsOn(remapJar)
         }
@@ -129,16 +149,23 @@ java {
 }
 
 publishing {
+
     publications {
-		mavenJava(MavenPublication) {
-			artifact(remapJar) {
-				builtBy remapJar
-			}
-			artifact(sourcesJar) {
-				builtBy remapSourcesJar
-			}
-		}
-	}
+    
+        mavenJava(MavenPublication) {
+        
+            artifact(sourcesJar) {
+            
+                builtBy remapSourcesJar
+            }
+
+            afterEvaluate {
+            
+                artifact remapJar
+            }
+        }
+    }
+
     repositories {
         maven {
             // Sets the maven URL
