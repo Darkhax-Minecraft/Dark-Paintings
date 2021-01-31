@@ -85,8 +85,9 @@ curseforge {
             addGameVersion "${it}"
         }
 
+        mainArtifact(file("${project.buildDir}/libs/${archivesBaseName}-${version}.jar"))
+        
         afterEvaluate {
-            mainArtifact(remapJar)
             uploadTask.dependsOn(remapJar)
         }
     }
