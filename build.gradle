@@ -87,11 +87,6 @@ curseforge {
         changelog = getGitChangelog() + "\n\nLike the mod? Consider following me on [Twitter](https://twitter.com/darkhaxdev) and joining the [Discord](https://discord.darkhax.net)\n\nHuge thanks to my supporters on [Patreon](https://www.patreon.com/Darkhax?MCChangelog?${mod_name})\n\n" + getPledgeLog()
         changelogType = 'markdown'
         addGameVersion "Fabric"
-        
-        versions.each {
-
-            addGameVersion "${it}"
-        }
 
         mainArtifact(file("${project.buildDir}/libs/${archivesBaseName}-${version}.jar"))
         
