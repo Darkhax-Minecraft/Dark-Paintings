@@ -77,7 +77,8 @@ tasks.withType(JavaCompile) {
 curseforge {
 
     apiKey = findProperty('curse_auth') ?: 0 
-
+    def versions = "${curse_versions}".split(', ')
+    
     project {
 
         id = "${curse_project}"
@@ -86,6 +87,11 @@ curseforge {
         changelogType = 'markdown'
         addGameVersion "Fabric"
 
+        versions.each {
+
+            addGameVersion "${it}"
+        }
+        
         mainArtifact(file("${project.buildDir}/libs/${archivesBaseName}-${version}.jar"))
         
         afterEvaluate {
