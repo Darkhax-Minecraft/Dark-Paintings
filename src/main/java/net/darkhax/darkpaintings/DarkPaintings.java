@@ -6,10 +6,10 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class DarkPaintings implements ModInitializer {
-	
-	@Override
-	public void onInitialize() {
-
+    
+    @Override
+    public void onInitialize () {
+        
         this.createPainting("in_the_air", 32, 16);
         this.createPainting("skyblock", 16, 16);
         this.createPainting("planets", 32, 16);
@@ -25,7 +25,7 @@ public class DarkPaintings implements ModInitializer {
         this.createPainting("the_wheel", 32, 32);
         this.createPainting("mr_moon", 16, 16);
         this.createPainting("a_distant_light", 32, 16);
-	}
+    }
     
     private PaintingMotive createPainting (String id, int width, int height) {
         
