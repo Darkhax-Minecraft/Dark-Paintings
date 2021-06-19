@@ -24,6 +24,12 @@ repositories {
         url = 'https://maven.theillusivec4.top/'
     }
     
+    // This maven repository hosts files for mods by TehNut such as HWYLA.
+    maven { 
+    
+        url = 'https://maven.tehnut.info' 
+    }
+    
     // This maven repository proxies requests to the CurseForge API. This will
     // allow mods without traditional mavens to be used in a dev environment.
     // They use the pattern curse.maven:<descriptor>-<projectid>:<fileid> for 
@@ -76,6 +82,11 @@ dependencies {
         // Patchouli is a framework for creating in-game documentation through
         // books and other types of documents.
         deobfCompile('patchouli', 'vazkii.patchouli', 'Patchouli', '1.16.4-51')
+        
+        // Hwyla displays a tooltip on the screen for the block or entity being
+        // looked at by a player. It is common for mods to add additional info
+        // to these tooltips by creating a plugin for this mod.
+        deobfCompile('hwyla', 'mcp.mobius.waila', 'Hwyla', '1.10.11-B78_1.16.2')
     }
 
     // This section includes mods that are commonly used by players and meet a
@@ -124,6 +135,8 @@ dependencies {
         // file of their mod.
         deobfRuntime('catalogue', 'curse.maven', 'catalogue-459701', '3285353')
         
+        // Adds the name of the mod which added an item/block to the tooltip of
+        // that item/block.
         deobfRuntime('mod-name-tooltip', 'curse.maven', 'mod-name-tooltip-238747', '3038982')
     }
 }
