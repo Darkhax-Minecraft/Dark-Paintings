@@ -7,13 +7,14 @@ license="LGPL v2.1"
 modId="darkpaintings"
 updateJSONURL="https://updates.blamejared.com/get?n=darkpaintings&gv=1.16.5"
 version="${version}"
-displayName="${mod_name}"
-displayURL="${mod_download}"
-credits="${mod_credits}"
-authors="${mod_authors}"
+displayName="${modName}"
+displayURL="${modHomepage}"
+credits="${modCredits}"
+authors="${modAuthor}"
 description='''
-${mod_description}
+${modDescription}
 '''
+itemIcon="minecraft:painting"
 
 [[dependencies.darkpaintings]]
     modId="forge"
