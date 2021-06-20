@@ -40,6 +40,10 @@ public class DarkPaintings {
 		registry.register(this.createPainting("afternoon_volcano", 16, 32));
 		registry.register(this.createPainting("the_wheel", 32, 32));
 		registry.register(this.createPainting("mr_moon", 16, 16));
+		registry.register(this.createPainting("a_distant_light", 32, 16));
+		registry.register(this.createPainting("crimson_taiga", 32, 16));
+		registry.register(this.createPainting("tetromino", 16, 32));
+		registry.register(this.createPainting("daybreak", 32, 16));
 	}
 
 	private PaintingType createPainting(String id, int width, int height) {
