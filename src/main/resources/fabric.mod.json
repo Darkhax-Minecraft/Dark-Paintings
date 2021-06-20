@@ -2,20 +2,24 @@
   "schemaVersion": 1,
   "id": "darkpaintings",
   "version": "${version}",
-  "name": "Dark Paintings",
-  "description": "New paintings created by members of our community.",
+
+  "name": "${modName}",
+  "description": "${modDescription}",
   "authors": [
+    "${modCredits}"
+  ],
+  "contributors": [
+    "Axeonlotl",
     "Darkhax",
-	"mmg28rtt",
-	"FuryDev",
-	"Kiqonic",
-	"Wouter",
-	"VydaX"
+    "mmg28rtt",
+    "FuryDev",
+    "Wouter",
+    "VydaX"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/dark-paintings",
-    "sources": "https://github.com/Darkhax-Minecraft/Dark-Paintings",
-    "issues": "https://github.com/Darkhax-Minecraft/Dark-Paintings/issues"
+    "homepage": "${modHomepage}",
+    "sources": "${modSource}",
+    "issues": "${modIssues}"
   },
   "license": "LGPL v2.1",
   "icon": "assets/darkpaintings/textures/painting/mr_moon.png",
@@ -29,7 +33,5 @@
     "fabricloader": ">=0.7.4",
     "fabric": "*",
     "minecraft": "1.16.x"
-  },
-  "suggests": {
   }
 }
