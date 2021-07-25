@@ -8,5 +8,3 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-
-rootProject.name="DarkPaintingsFabric-1.17"
