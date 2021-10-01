@@ -1,0 +1,10 @@
+{
+    "comment_localization": "Please do not localize painting titles or artist names. These can be omitted from the non-us files.",
+    "tooltip.darkpaintings.title": "§f%s - %s",
+    "tooltip.darkpaintings.artist": "par %s",
+    "tooltip.darkpaintings.id": "Id : %s",
+    "config.waila.plugin_darkpaintings": "Dark Paintings",
+    "config.waila.plugin_darkpaintings.show_title": "Titre",
+    "config.waila.plugin_darkpaintings.show_artist": "Artiste",
+    "config.waila.plugin_darkpaintings.show_id": "ID peinture",
+}
