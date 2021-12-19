@@ -9,6 +9,7 @@ import javax.annotation.Nullable;
 import mcp.mobius.waila.api.IEntityAccessor;
 import mcp.mobius.waila.api.IEntityComponentProvider;
 import mcp.mobius.waila.api.IPluginConfig;
+import net.darkhax.darkpaintings.authors.AuthorManager;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.item.PaintingEntity;
 import net.minecraft.entity.item.PaintingType;
@@ -22,7 +23,6 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class DarkPaintingsComponentProvider implements IEntityComponentProvider {
 
 	private static final Map<PaintingType, ITextComponent> titles = new HashMap<>();
-	private static final Map<PaintingType, ITextComponent> artists = new HashMap<>();
 
 	@Nullable
 	public static ITextComponent getTitle(PaintingType painting) {
@@ -30,23 +30,8 @@ public class DarkPaintingsComponentProvider implements IEntityComponentProvider 
 		return titles.computeIfAbsent(painting, p -> {
 
 			final ResourceLocation id = p.getRegistryName();
-			final String titleKey = "painting." + id.getNamespace() + "." + id.getPath() + ".title";
-			return I18n.exists(titleKey) ? new TranslationTextComponent(titleKey).withStyle(TextFormatting.WHITE)
-					: null;
-		});
-	}
-
-	@Nullable
-	public static ITextComponent getArtist(PaintingType painting) {
-
-		return artists.computeIfAbsent(painting, p -> {
-
-			final ResourceLocation id = p.getRegistryName();
-			final String artistKey = "painting." + id.getNamespace() + "." + id.getPath() + ".artist";
-			return I18n.exists(artistKey)
-					? new TranslationTextComponent("tooltip.darkpaintings.artist",
-							new TranslationTextComponent(artistKey))
-					: null;
+			final String titleKey = "painting." + id.getNamespace() + "." + id.getPath() + ".title";			
+			return I18n.exists(titleKey) ? new TranslationTextComponent(titleKey).withStyle(TextFormatting.WHITE) : null;
 		});
 	}
 
@@ -61,8 +46,7 @@ public class DarkPaintingsComponentProvider implements IEntityComponentProvider 
 
 			if (title != null && config.get(DarkPaintingsHwylaPlugin.SHOW_TITLE)) {
 
-				tooltip.set(0, new TranslationTextComponent("tooltip.darkpaintings.title",
-						accessor.getEntity().getDisplayName(), title));
+				tooltip.set(0, new TranslationTextComponent("tooltip.darkpaintings.title", accessor.getEntity().getDisplayName(), title));
 			}
 		}
 	}
@@ -74,17 +58,16 @@ public class DarkPaintingsComponentProvider implements IEntityComponentProvider 
 		if (accessor.getEntity() instanceof PaintingEntity) {
 
 			final PaintingEntity painting = (PaintingEntity) accessor.getEntity();
-			final ITextComponent artist = getArtist(painting.motive);
+			final ITextComponent artist = AuthorManager.getAuthor(painting.motive);
 
 			if (artist != null && config.get(DarkPaintingsHwylaPlugin.SHOW_ARTIST)) {
 
-				tooltip.add(artist);
+				tooltip.add(new TranslationTextComponent("tooltip.darkpaintings.artist", artist));
 			}
 
 			if (config.get(DarkPaintingsHwylaPlugin.SHOW_ID)) {
 
-				tooltip.add(
-						new TranslationTextComponent("tooltip.darkpaintings.id", painting.motive.getRegistryName()));
+				tooltip.add(new TranslationTextComponent("tooltip.darkpaintings.id", painting.motive.getRegistryName()));
 			}
 		}
 	}
