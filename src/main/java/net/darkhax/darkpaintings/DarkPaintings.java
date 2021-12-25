@@ -63,6 +63,10 @@ public class DarkPaintings {
 		this.createPainting(registry, "cottage_by_the_river", 16, 16, authorAbsolem);
 		this.createPainting(registry, "seavibe", 16, 16, authorAbsolem);
 		this.createPainting(registry, "antler_maze", 16, 32, authorAbsolem);
+		this.createPainting(registry, "turkey", 16, 16, authorAbsolem);
+		this.createPainting(registry, "kerstball", 16, 16, authorAbsolem);
+		this.createPainting(registry, "snowman_scenery", 32, 16, authorAbsolem);
+		this.createPainting(registry, "santa_moon", 32, 32, authorAbsolem);
 		
 		final TextComponent authorPunpudle = AuthorManager.makeAuthor("punpudle");
 		this.createPainting(registry, "the_secret_neighborhood", 32, 32, authorPunpudle);
