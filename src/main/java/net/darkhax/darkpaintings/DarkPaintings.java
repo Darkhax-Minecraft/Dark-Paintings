@@ -45,6 +45,10 @@ public class DarkPaintings implements ModInitializer {
 		this.createPainting("cottage_by_the_river", 16, 16);
 		this.createPainting("seavibe", 16, 16);
 		this.createPainting("antler_maze", 16, 32);
+		this.createPainting("turkey", 16, 16);
+		this.createPainting("kerstball", 16, 16);
+		this.createPainting("snowman_scenery", 32, 16);
+		this.createPainting("santa_moon", 32, 32);
 		
 		// punpudle
 		this.createPainting("the_secret_neighborhood", 32, 32);
