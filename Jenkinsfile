@@ -3,8 +3,22 @@
 pipeline {
 
     agent any
+
+    tools {
+        jdk "jdk-16.0.1+9"
+    }
     
     stages {
+        
+        stage('Setup') {
+        
+            steps {
+            
+                echo 'Setup Project'
+                sh 'chmod +x gradlew'
+                sh './gradlew clean'
+            }
+        }
         
         stage('Build') {
         
@@ -17,8 +31,7 @@ pipeline {
                 ]) {
             
                     echo 'Building project.'
-                    sh 'chmod +x gradlew'
-                    sh './gradlew clean build publish curseforge updateVersionTracker postTweet --stacktrace --warn'
+                    sh './gradlew build publish publishCurseForge postTweet postDiscord --stacktrace --warn'
                 }
             }
         }
