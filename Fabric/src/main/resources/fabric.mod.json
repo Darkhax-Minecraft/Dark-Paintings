@@ -18,10 +18,10 @@
   },
   "icon": "assets/darkpaintings/textures/painting/mr_moon.png",
   "license": "${mod_license}",
-  "environment": "client",
+  "environment": "*",
   "entrypoints": {
     "main": [
-      "net.darkhax.colouredtooltips.ColouredTooltipsFabric"
+      "net.darkhax.darkpaintings.DarkPaintingsFabric"
     ]
   },
   "depends": {
