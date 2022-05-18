@@ -102,7 +102,7 @@ task publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge)
 
     apiToken = findProperty('curse_auth')
 
-    def mainFile = upload(paintings++_curse_project, file("${project.buildDir}/libs/${outputArchiveName}"))
+    def mainFile = upload(paintingspp_curse_project, file("${project.buildDir}/libs/${outputArchiveName}"))
     mainFile.changelogType = 'markdown'
     mainFile.changelog = "Updated to match ${version} of the [mod](${mod_homepage})."
     mainFile.addGameVersion(project.ext.minecraft_version)
