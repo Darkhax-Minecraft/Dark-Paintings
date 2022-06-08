@@ -13,4 +13,4 @@ pluginManagement {
 }
 
 rootProject.name = "DarkPaintings"
-include('Common', 'Fabric', 'Forge', 'Paintings++')
+include('Common', 'Fabric', 'Forge')
