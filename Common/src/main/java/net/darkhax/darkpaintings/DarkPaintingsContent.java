@@ -4,7 +4,6 @@ import net.darkhax.bookshelf.api.Services;
 import net.darkhax.bookshelf.api.registry.RegistryDataProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.decoration.PaintingVariant;
-import net.minecraft.world.item.Items;
 
 public final class DarkPaintingsContent extends RegistryDataProvider {
 
@@ -62,8 +61,6 @@ public final class DarkPaintingsContent extends RegistryDataProvider {
         this.painting("last_dreams_at_candyland", 32, 16, authorPunpudle);
         this.painting("the_most_sweet_candy", 16, 16, authorPunpudle);
         this.painting("sir_ramfrez_yarn_paradise", 16, 16, authorPunpudle);
-
-        Items.PAINTING
     }
 
     private Component createAuthorName(String name) {
