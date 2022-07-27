@@ -31,6 +31,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
             property 'terminal.ansi', 'true'
 
+
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
             if (project.ext.mixin_enabled) {
                 arg "-mixin.config=${mod_id}.mixins.json"
             }
@@ -49,6 +53,10 @@ minecraft {
             taskName 'Server'
             property 'forge.logging.console.level', 'debug'
             property 'terminal.ansi', 'true'
+
+
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
             if (project.ext.mixin_enabled) {
                 arg "-mixin.config=${mod_id}.mixins.json"
