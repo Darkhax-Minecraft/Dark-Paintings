@@ -10,7 +10,7 @@ import javax.imageio.ImageIO
 import groovy.json.JsonBuilder
 import java.nio.file.Paths
 
-def outputArchiveName = "${mod_name}-(Paitnings++)-${project.version}-${minecraft_version}.zip"
+def outputArchiveName = "${mod_name}-(Paintings++)-${project.version}-${minecraft_version}.zip"
 
 // This task will create a Paintings++ compatible resource pack using a mod's 
 // resources folder.
