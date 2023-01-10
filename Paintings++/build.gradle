@@ -10,7 +10,7 @@ import javax.imageio.ImageIO
 import groovy.json.JsonBuilder
 import java.nio.file.Paths
 
-def outputArchiveName = "${mod_name}-(Paitnings++)-${project.version}-${minecraft_version}.zip"
+def outputArchiveName = "${mod_name}-(Paintings++)-${project.version}-${minecraft_version}.zip"
 
 // This task will create a Paintings++ compatible resource pack using a mod's 
 // resources folder.
@@ -62,7 +62,7 @@ def createPaintingsFile() {
     project(":Common").sourceSets.main.resources.files.forEach { file ->
         
         // Only process painting texture files.
-        if (file.path.contains("assets\\${mod_id}\\textures\\painting\\") && file.path.endsWith('.png')) {
+        if (file.path.contains(Paths.get("assets", mod_id, "textures", "painting").toString()) && file.path.endsWith('.png')) {
         
             // Append the paintings data with info about this painting.
             paintingsData.paintings.add(createPainting(file))
