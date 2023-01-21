@@ -28,7 +28,8 @@
     "fabricloader": ">=0.14.12",
     "fabric": "*",
     "minecraft": "1.19.3",
-    "java": ">=17"
+    "java": ">=17",
+    "bookshelf": ">=17"
   },
   "custom": {
     "modmenu": {
