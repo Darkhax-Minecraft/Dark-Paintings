@@ -1,22 +1,15 @@
-buildscript {
-    repositories {
-        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
-    }
-}
-
 plugins {
-    id 'net.minecraftforge.gradle' version '5.1.+'
-    id 'net.darkhax.curseforgegradle' version '1.0.11'
-    id 'net.darkhax.tweedle' version '1.0.5'
+    id 'net.minecraftforge.gradle'
+    id 'net.darkhax.curseforgegradle'
+    id 'com.modrinth.minotaur'
+    id 'org.spongepowered.mixin'
 }
 
 apply from: '../gradle/patreon.gradle'
 
-archivesBaseName = "${mod_name}-Forge-${minecraft_version}"
+base {
+    archivesName = "${mod_name}-Forge-${minecraft_version}"
+}
 
 minecraft {
 
@@ -42,7 +35,7 @@ minecraft {
             mods {
                 modClientRun {
                     source sourceSets.main
-                    source project(":Common").sourceSets.main
+                    source project(':common').sourceSets.main
                 }
             }
         }
@@ -65,7 +58,7 @@ minecraft {
             mods {
                 modServerRun {
                     source sourceSets.main
-                    source project(":Common").sourceSets.main
+                    source project(':common').sourceSets.main
                 }
             }
         }
@@ -75,20 +68,28 @@ minecraft {
 dependencies {
 
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    compileOnly project(":Common")
+    compileOnly project(':common')
 
     implementation fg.deobf("net.darkhax.bookshelf:Bookshelf-Forge-${project.ext.minecraft_version}:${project.ext.bookshelf_version}")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
-tasks.withType(JavaCompile) {
-    source(project(":Common").sourceSets.main.allSource)
+tasks.withType(JavaCompile).configureEach {
+    source(project(':common').sourceSets.main.allSource)
+}
+
+tasks.withType(Javadoc).configureEach {
+    source(project(':common').sourceSets.main.allJava)
+}
+
+tasks.named("sourcesJar", Jar) {
+    from(project(':common').sourceSets.main.allSource)
 }
 
 processResources {
 
-    from project(":Common").sourceSets.main.resources
+    from project(':common').sourceSets.main.resources
 
     def buildProps = project.properties.clone()
 
@@ -145,8 +146,6 @@ jar {
 // -- Mixin Support
 if (project.ext.mixin_enabled) {
 
-    apply plugin: 'org.spongepowered.mixin'
-
     mixin {
 
         // Tells the mixin plugin where to put the generated refmap file.
@@ -161,20 +160,9 @@ project.publishing {
 
         mavenJava(MavenPublication) {
 
-            artifactId project.archivesBaseName
-
-            // Base mod archive.
-            artifact jar
-
-            // Adds the sources as an artifact.
-            artifact project.sourcesJar {
-                classifier 'sources'
-            }
-
-            // Adds the javadocs as an artifact.
-            artifact project.javadocJar {
-                classifier 'javadoc'
-            }
+            artifactId = base.archivesName.get()
+            from components.java
+            fg.component(it)
         }
     }
 
@@ -208,6 +196,8 @@ task publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge)
     mainFile.changelog = project.ext.mod_changelog
     mainFile.addJavaVersion('Java 17')
     mainFile.addRequirement('bookshelf')
+    mainFile.releaseType = 'release'
+    mainFile.addGameVersion('Client', 'Server')
 
     // Append Patreon Supporters
     def patreonInfo = project.findProperty('patreon')
@@ -225,37 +215,26 @@ task publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge)
     }
 }
 
-// Twitter Announcement
-def canTweet = project.hasProperty('twitter_api_key') && project.hasProperty('twitter_api_key_secret') && project.hasProperty('twitter_access_token') && project.hasProperty('twitter_access_token_secret')
+// Modrinth
+modrinth {
 
-task postTweet(type: net.darkhax.tweedle.TaskPostTweet) {
+    def patreonInfo = project.findProperty('patreon')
+    def changelogText = project.ext.mod_changelog
 
-    onlyIf {
-
-        canTweet && project.hasProperty('minecraft_version') && project.hasProperty('curse_file_url')
+    if (patreonInfo) {
+        changelogText += "\n\nThis project is made possible by [Patreon](${patreonInfo.campaignUrlTracked}) support from players like you. Thank you!\n\n${patreonInfo.pledgeLog}"
     }
 
-    if (canTweet) {
+    token.set(project.findProperty('modrinth_auth'))
+    projectId.set(modrinth_project)
+    changelog.set(changelogText)
+    versionName.set("${mod_name}-Forge-${minecraft_version}-$version")
+    versionType.set('release')
+    uploadFile.set(tasks.jar)
 
-        addClient(project.findProperty('twitter_api_key'), project.findProperty('twitter_api_key_secret'), project.findProperty('twitter_access_token'), project.findProperty('twitter_access_token_secret'))
+    dependencies {
+        required.project('bookshelf-lib')
     }
-
-    doLast {
-
-        def tweetBody = "${project.ext.mod_name} (Forge) ${project.version} for Minecraft ${project.ext.minecraft_version} has been released. #${project.ext.mod_name.toLowerCase().replaceAll("[^a-zA-Z]", "")} #forge"
-
-        if (project.hasProperty('curse_file_url')) {
-
-            tweetBody += " ${project.findProperty('curse_file_url')}"
-        }
-
-        sendTweet(tweetBody)
-    }
-}
-
-if (!canTweet) {
-
-    project.logger.warn("Skipping Twitter plugin. APIKey: ${project.hasProperty('twitter_api_key')} ${project.hasProperty('twitter_api_key_secret')} AccessToken: ${project.hasProperty('twitter_access_token')} ${project.hasProperty('twitter_access_token_secret')}")
 }
 
 // Forge's Jar Signer
