@@ -19,6 +19,7 @@ public final class DarkPaintingsContent extends RegistryDataProvider {
         this.painting("in_the_air", 32, 16);
         this.painting("skyblock", 16, 16);
         this.painting("mr_moon", 16, 16);
+        this.painting("scarlet_moon", 16, 16);
         this.painting("tetromino", 16, 32);
         this.painting("daybreak", 32, 16);
 

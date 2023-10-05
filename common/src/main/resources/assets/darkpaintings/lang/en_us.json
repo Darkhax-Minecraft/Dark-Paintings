@@ -1,5 +1,5 @@
 {
-  "comment_localization": "Please do not localize painting titles or artist names. These can be omitted from the non-us files.",
+  "comment_localization": "Please do not localize comments, titles, or author names.",
 
   "comment_darkhax": "Paintings by Darkhax",
   "painting.darkpaintings.in_the_air.title": "In The Air",
@@ -8,6 +8,8 @@
   "painting.darkpaintings.skyblock.author": "Darkhax",
   "painting.darkpaintings.mr_moon.title": "Mr. Moon",
   "painting.darkpaintings.mr_moon.author": "Darkhax",
+  "painting.darkpaintings.scarlet_moon.title": "Scarlet Moon",
+  "painting.darkpaintings.scarlet_moon.author": "Darkhax",
   "painting.darkpaintings.tetromino.title": "Tetromino",
   "painting.darkpaintings.tetromino.author": "Darkhax",
   "painting.darkpaintings.daybreak.title": "Daybreak",
