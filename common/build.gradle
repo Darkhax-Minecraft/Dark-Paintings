@@ -1,7 +1,6 @@
 plugins {
-    id 'org.spongepowered.gradle.vanilla'
+    id 'org.spongepowered.gradle.vanilla' version '0.2.1-SNAPSHOT'
 }
-
 apply from: '../gradle/property_helper.gradle'
 
 base {
@@ -14,8 +13,8 @@ minecraft {
 
 dependencies {
     compileOnly group: 'org.spongepowered', name: 'mixin', version: '0.8.5'
-    implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
     compileOnly group: 'net.darkhax.bookshelf', name:"Bookshelf-Common-${project.ext.minecraft_version}", version: project.ext.bookshelf_version
+    implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
 }
 
 processResources {
