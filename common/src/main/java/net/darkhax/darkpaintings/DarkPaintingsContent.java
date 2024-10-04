@@ -61,6 +61,11 @@ public final class DarkPaintingsContent extends RegistryDataProvider {
         this.painting("last_dreams_at_candyland", 32, 16);
         this.painting("the_most_sweet_candy", 16, 16);
         this.painting("sir_ramfrez_yarn_paradise", 16, 16);
+
+        // Superkat32
+        this.painting("snail_aboard", 32, 16);
+        this.painting("nighttime_calico", 16, 32);
+        this.painting("salmon_run", 16, 16);
     }
 
     private void painting(String id, int width, int height) {
