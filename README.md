@@ -1,41 +1,50 @@
-# [Dark Paintings](https://www.curseforge.com/minecraft/mc-mods/dark-paintings)
+<!-- name-start -->
+
+# Runelic [![CurseForge Project](https://img.shields.io/curseforge/dt/393149?logo=curseforge&label=CurseForge&style=flat-square&labelColor=2D2D2D&color=555555)](https://www.curseforge.com/minecraft/mc-mods/runelic) [![Modrinth Project](https://img.shields.io/modrinth/dt/P4Xi5huA?logo=modrinth&label=Modrinth&style=flat-square&labelColor=2D2D2D&color=555555)](https://modrinth.com/mod/runelic) [![Maven Project](https://img.shields.io/maven-metadata/v?style=flat-square&logoColor=D31A38&labelColor=2D2D2D&color=555555&label=Latest&logo=gradle&metadataUrl=https%3A%2F%2Fmaven.blamejared.com%2Fnet%2Fdarkhax%2Frunelic%2Frunelic-common-1.21.1%2Fmaven-metadata.xml)](https://maven.blamejared.com/net/darkhax/runelic)
+
+<!-- name-end -->
+<!-- description-start -->
+Adds the Runelic font system to the game. The documentation for this mod can be
+found [here](https://docs.darkhax.net/mods/runelic).
+<!-- description-end -->
+
+<!-- maven-start -->
 
 ## Maven Dependency
 
 If you are using [Gradle](https://gradle.org) to manage your dependencies, add the following into your `build.gradle`
 file. Make sure to replace the version with the correct one. All versions can be
-viewed [here](https://maven.blamejared.com/net/darkhax/darkpaintings/).
+viewed [here](https://maven.blamejared.com/net/darkhax/runelic).
 
-```
+```gradle
 repositories {
-
-    maven {
-    
+    maven { 
         url 'https://maven.blamejared.com'
     }
 }
 
 dependencies {
+    // NeoForge
+    implementation group: 'net.darkhax.darkpaintings', name: 'runelic-neoforge-1.21.1', version: '21.1.0'
 
-    // Example: compile "net.darkhax.darkpaintings:DarkPaintings-1.16.4:5.0.4"
-    compile "net.darkhax.darkpaintings:DarkPaintings-MCVERSION:PUT_FILE_VERSION_HERE"
+    // Forge
+    implementation group: 'net.darkhax.darkpaintings', name: 'runelic-forge-1.21.1', version: '21.1.0'
+
+    // Fabric & Quilt
+    modImplementation group: 'net.darkhax.darkpaintings', name: 'runelic-fabric-1.21.1', version: '21.1.0'
+
+    // Common / MultiLoader / Vanilla
+    compileOnly group: 'net.darkhax.darkpaintings', name: 'runelic-common-1.21.1', version: '21.1.0'
 }
 ```
 
-## Jar Signing
+<!-- maven-end -->
 
-As of January 11th 2021 officially published builds will be signed. You can validate the integrity of these builds by
-comparing their signatures with the public fingerprints.
-
-| Hash   | Fingerprint                                                        |
-|--------|--------------------------------------------------------------------|
-| MD5    | `12F89108EF8DCC223D6723275E87208F`                                 |
-| SHA1   | `46D93AD2DC8ADED38A606D3C36A80CB33EFA69D1`                         |
-| SHA256 | `EBC4B1678BF90CDBDC4F01B18E6164394C10850BA6C4C748F0FA95F2CB083AE5` |
+<!-- sponsor-start -->
 
 ## Sponsors
 
-<img src="https://nodecraft.com/assets/images/logo-dark.png" width="384" height="90">
-
-This project is sponsored by Nodecraft. Use code [Darkhax](https://nodecraft.com/r/darkhax) for 30% off your first month
+[![](https://assets.blamejared.com/nodecraft/darkhax.jpg)](https://nodecraft.com/r/darkhax)    
+Runelic is sponsored by Nodecraft. Use code **[DARKHAX](https://nodecraft.com/r/darkhax)** for 30% of your first month
 of service!
+<!-- sponsor-end -->
