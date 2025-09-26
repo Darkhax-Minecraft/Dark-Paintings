@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:lumberjack",
   "height": 2,
-  "width": 4
+  "width": 4,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.lumberjack.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.lumberjack.author"
+  }
 }

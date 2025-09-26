@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:seavibe",
   "height": 1,
-  "width": 1
+  "width": 1,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.seavibe.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.seavibe.author"
+  }
 }

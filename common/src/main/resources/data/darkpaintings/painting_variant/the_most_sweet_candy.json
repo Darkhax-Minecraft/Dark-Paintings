@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:the_most_sweet_candy",
   "height": 1,
-  "width": 1
+  "width": 1,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.the_most_sweet_candy.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.the_most_sweet_candy.author"
+  }
 }

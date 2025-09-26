@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:antler_maze",
   "height": 2,
-  "width": 1
+  "width": 1,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.antler_maze.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.antler_maze.author"
+  }
 }

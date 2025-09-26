@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:santa_moon",
   "height": 2,
-  "width": 2
+  "width": 2,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.santa_moon.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.santa_moon.author"
+  }
 }

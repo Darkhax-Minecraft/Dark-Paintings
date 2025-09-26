@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:omens_wing",
   "height": 2,
-  "width": 2
+  "width": 2,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.omens_wing.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.omens_wing.author"
+  }
 }

@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:whale_dream",
   "height": 4,
-  "width": 4
+  "width": 4,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.whale_dream.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.whale_dream.author"
+  }
 }

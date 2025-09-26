@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:crimson_taiga",
   "height": 1,
-  "width": 2
+  "width": 2,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.crimson_taiga.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.crimson_taiga.author"
+  }
 }

@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:in_the_air",
   "height": 1,
-  "width": 2
+  "width": 2,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.in_the_air.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.in_the_air.author"
+  }
 }

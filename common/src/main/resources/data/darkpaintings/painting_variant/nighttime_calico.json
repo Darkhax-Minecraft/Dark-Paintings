@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:nighttime_calico",
   "height": 2,
-  "width": 1
+  "width": 1,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.nighttime_calico.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.nighttime_calico.author"
+  }
 }

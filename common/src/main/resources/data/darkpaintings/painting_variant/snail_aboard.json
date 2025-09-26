@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:snail_aboard",
   "height": 1,
-  "width": 2
+  "width": 2,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.snail_aboard.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.snail_aboard.author"
+  }
 }

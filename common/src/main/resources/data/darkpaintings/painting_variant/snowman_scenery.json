@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:snowman_scenery",
   "height": 1,
-  "width": 2
+  "width": 2,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.snowman_scenery.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.snowman_scenery.author"
+  }
 }

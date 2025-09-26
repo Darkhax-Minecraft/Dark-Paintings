@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:daybreak",
   "height": 1,
-  "width": 2
+  "width": 2,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.daybreak.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.daybreak.author"
+  }
 }

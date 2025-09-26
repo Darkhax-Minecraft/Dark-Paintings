@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:salmon_run",
   "height": 1,
-  "width": 1
+  "width": 1,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.salmon_run.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.salmon_run.author"
+  }
 }

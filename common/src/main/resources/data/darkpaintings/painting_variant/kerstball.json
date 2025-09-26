@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:kerstball",
   "height": 1,
-  "width": 1
+  "width": 1,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.kerstball.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.kerstball.author"
+  }
 }

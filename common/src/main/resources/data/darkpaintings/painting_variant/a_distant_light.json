@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:a_distant_light",
   "height": 1,
-  "width": 2
+  "width": 2,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.a_distant_light.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.a_distant_light.author"
+  }
 }

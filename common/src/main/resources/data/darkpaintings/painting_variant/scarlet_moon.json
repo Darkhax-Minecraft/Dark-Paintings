@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:scarlet_moon",
   "height": 1,
-  "width": 1
+  "width": 1,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.scarlet_moon.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.scarlet_moon.author"
+  }
 }

@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:watching_the_sunset",
   "height": 1,
-  "width": 2
+  "width": 2,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.watching_the_sunset.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.watching_the_sunset.author"
+  }
 }

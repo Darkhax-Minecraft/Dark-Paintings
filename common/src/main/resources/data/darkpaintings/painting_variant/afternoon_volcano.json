@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:afternoon_volcano",
   "height": 2,
-  "width": 1
+  "width": 1,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.afternoon_volcano.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.afternoon_volcano.author"
+  }
 }

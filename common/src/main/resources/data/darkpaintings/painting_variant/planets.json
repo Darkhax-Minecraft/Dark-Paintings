@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:planets",
   "height": 1,
-  "width": 2
+  "width": 2,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.planets.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.planets.author"
+  }
 }

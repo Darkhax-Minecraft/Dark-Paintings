@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:sir_ramfrez_yarn_paradise",
   "height": 1,
-  "width": 1
+  "width": 1,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.sir_ramfrez_yarn_paradise.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.sir_ramfrez_yarn_paradise.author"
+  }
 }

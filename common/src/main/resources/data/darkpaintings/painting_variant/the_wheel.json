@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:the_wheel",
   "height": 2,
-  "width": 2
+  "width": 2,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.the_wheel.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.the_wheel.author"
+  }
 }

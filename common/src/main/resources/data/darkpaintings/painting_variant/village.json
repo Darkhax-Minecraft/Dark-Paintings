@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:village",
   "height": 2,
-  "width": 4
+  "width": 4,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.village.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.village.author"
+  }
 }

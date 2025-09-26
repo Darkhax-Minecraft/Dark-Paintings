@@ -1,5 +1,13 @@
 {
   "asset_id": "darkpaintings:the_tower",
   "height": 2,
-  "width": 1
+  "width": 1,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.the_tower.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.the_tower.author"
+  }
 }
