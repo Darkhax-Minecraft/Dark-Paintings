@@ -32,9 +32,7 @@
     "fabricloader": ">=${fabric_loader_version}",
     "fabric-api": "*",
     "minecraft": "${minecraft_version}",
-    "java": ">=${java_version}",
-    "bookshelf": ">=${bookshelf_version}",
-    "prickle": ">=${prickle_version}"
+    "java": ">=${java_version}"
   },
   "custom": {
     "modmenu": {

@@ -34,17 +34,3 @@ type = "required"
 versionRange = "${minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"
-
-[[dependencies.${ mod_id }]]
-modId = "bookshelf"
-type = "required"
-versionRange = "${bookshelf_version_range}"
-ordering = "NONE"
-side = "BOTH"
-
-[[dependencies.${ mod_id }]]
-modId = "prickle"
-type = "required"
-versionRange = "${prickle_version_range}"
-ordering = "NONE"
-side = "BOTH"
