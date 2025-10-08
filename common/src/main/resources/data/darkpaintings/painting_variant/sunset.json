@@ -1,0 +1,13 @@
+{
+  "asset_id": "darkpaintings:sunset",
+  "height": 2,
+  "width": 1,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.sunset.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.sunset.author"
+  }
+}

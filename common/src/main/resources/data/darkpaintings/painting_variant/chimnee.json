@@ -1,0 +1,13 @@
+{
+  "asset_id": "darkpaintings:chimnee",
+  "height": 2,
+  "width": 1,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.chimnee.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.chimnee.author"
+  }
+}
