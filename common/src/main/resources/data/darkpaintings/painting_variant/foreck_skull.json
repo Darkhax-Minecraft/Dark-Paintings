@@ -1,0 +1,13 @@
+{
+  "asset_id": "darkpaintings:foreck_skull",
+  "height": 1,
+  "width": 2,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.foreck_skull.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.foreck_skull.author"
+  }
+}

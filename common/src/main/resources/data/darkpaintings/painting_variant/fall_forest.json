@@ -1,0 +1,13 @@
+{
+  "asset_id": "darkpaintings:fall_forest",
+  "height": 1,
+  "width": 2,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.fall_forest.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.fall_forest.author"
+  }
+}

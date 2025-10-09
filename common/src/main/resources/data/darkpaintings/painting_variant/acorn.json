@@ -1,0 +1,13 @@
+{
+  "asset_id": "darkpaintings:acorn",
+  "height": 1,
+  "width": 1,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.acorn.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.acorn.author"
+  }
+}

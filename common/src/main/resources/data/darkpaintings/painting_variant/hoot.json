@@ -1,0 +1,13 @@
+{
+  "asset_id": "darkpaintings:hoot",
+  "height": 1,
+  "width": 1,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.hoot.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.hoot.author"
+  }
+}

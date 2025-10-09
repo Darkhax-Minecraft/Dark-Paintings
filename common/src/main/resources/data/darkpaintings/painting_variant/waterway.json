@@ -1,0 +1,13 @@
+{
+  "asset_id": "darkpaintings:waterway",
+  "height": 2,
+  "width": 2,
+  "title": {
+    "color": "yellow",
+    "translate": "painting.darkpaintings.waterway.title"
+  },
+  "author": {
+    "color": "gray",
+    "translate": "painting.darkpaintings.waterway.author"
+  }
+}
