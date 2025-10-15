@@ -44,6 +44,10 @@
     "darkpaintings:pumkin",
     "darkpaintings:shroom",
     "darkpaintings:sunset",
-    "darkpaintings:waterway"
+    "darkpaintings:waterway",
+    "darkpaintings:constellation_aries",
+    "darkpaintings:constellation_cancer",
+    "darkpaintings:constellation_leo",
+    "darkpaintings:constellation_libra"
   ]
 }
