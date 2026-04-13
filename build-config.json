@@ -1,0 +1,23 @@
+{
+  "mod": {
+    "name": "DarkPaintings",
+    "group": "net.darkhax.darkpaintings",
+    "authors": [
+      "Darkhax"
+    ],
+    "id": "darkpaintings",
+    "license": "LGPL v2.1",
+    "description": "Adds a variety of new paintings to the game.",
+    "repo": "https://github.com/Darkhax-Minecraft/dark-paintings",
+    "client": false
+  },
+  "dependencies": [],
+  "curseforge": {
+    "slug": "dark-paintings",
+    "id": "377281"
+  },
+  "modrinth": {
+    "slug": "dark-paintings",
+    "id": "lFGQ4Hnk"
+  }
+}

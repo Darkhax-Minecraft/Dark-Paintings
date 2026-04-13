@@ -1,7 +1,6 @@
 package net.darkhax.darkpaintings.impl;
 
 import net.darkhax.darkpaintings.common.impl.DarkPaintingsMod;
-import net.minecraft.world.item.Items;
 import net.neoforged.fml.common.Mod;
 
 @Mod(DarkPaintingsMod.MOD_ID)
