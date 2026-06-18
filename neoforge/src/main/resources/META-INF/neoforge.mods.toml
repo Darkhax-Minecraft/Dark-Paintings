@@ -4,9 +4,9 @@ issueTrackerURL = "https://github.com/Darkhax-Minecraft/dark-paintings/issues"
 
 [[mods]]
 modId = "darkpaintings"
-version = "26.1.2.0"
+version = "26.2.0.0"
 displayName = "DarkPaintings"
-updateJSONURL = "https://updates.blamejared.com/get?n=darkpaintings&gv=26.1.2&ml=neoforge"
+updateJSONURL = "https://updates.blamejared.com/get?n=darkpaintings&gv=26.2&ml=neoforge"
 displayURL = "https://www.curseforge.com/minecraft/mc-mods/dark-paintings"
 logoFile = "logo_darkpaintings.png"
 logoBlur = false
@@ -23,14 +23,14 @@ config = "darkpaintings.neoforge.mixins.json"
 [[dependencies.darkpaintings]]
 modId = "minecraft"
 type = "required"
-versionRange = "26.1"
+versionRange = "26.2"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.darkpaintings]]
 modId = "neoforge"
 type = "required"
-versionRange = "[26.1.0.1-beta,)"
+versionRange = "[26.2.0.1-beta,)"
 ordering = "NONE"
 side = "BOTH"
 
